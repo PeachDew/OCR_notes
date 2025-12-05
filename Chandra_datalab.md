@@ -1,4 +1,6 @@
 ## Chandra by Datalab
+https://github.com/datalab-to/chandra
+
 An OCR model that tops independent olmocr benchmark. They created the open-source tools Marker/Surya (OCR toolkits).
 
 ### Changes from old approach
@@ -46,7 +48,7 @@ Not running raw transformer, they optimise for latency using Speculative Decodin
     - So one forward pass reveals both whether draft matches what model would choose and
     - what model actually wants at rejection point
 
-### EAGLE-3 Making Drafting Smartes (Extrapolation Algorithm for Greater Language-model Efficiency)
+### EAGLE-3 Making Drafting Smarter (Extrapolation Algorithm for Greater Language-model Efficiency)
 Standard speculative decoding uses a separate model as the drafter. EAGLE instead creates the draft using the target model's own hidden states.
 
 Instead of training a separate draft model EAGLE learns a lightweight auto-regression head, taking the target model's last hidden state and extrapolates forward to predict multiple future tokens. 
