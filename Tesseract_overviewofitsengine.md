@@ -5,13 +5,14 @@ Was developed way back in 1984!! But while groundbreaking in its time, has archi
 
 ### Two Pass recognition system
 Document you are reading might use a font the main classifier has never seen.
+
 Pass 1: 
  - OCR engine processes the document, word by word top to bottom
  - Character blobs first recognized using Static Classifier, pretrained on highly generalized set of fonts
  - After word is classified, use linguistic analysis (dictionary, grammar) to find best possible word string
  - if word is dictionary-valid, and has high confidence, Tesseract assumes recognition correct
 
-On-the-fly trainin:
+On-the-fly training:
  - individual characters of high-confidence, correctly recognized words are immediately used as training samples for their **Adaptive Classifier**
  - as soon as adaptive classifier has seen 3 matching samples, it starts contributing to recognition results
 
